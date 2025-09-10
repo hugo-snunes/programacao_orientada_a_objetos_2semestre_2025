@@ -16,7 +16,6 @@ public Computador getComputador(){
 
 public void setComputador(Computador Computador){
         this.Computador = Computador;
-    
 }
 
 public Programa getExecutarPrograma(){
