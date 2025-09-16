@@ -1,29 +1,41 @@
 package Atividade1;
 
 public class SistemaOperacional {
-    Computador Computador;
-    Programa ExecutarPrograma;
-
-
-public SistemaOperacional(Computador Computador, Programa ExecutarPrograma){
-this.Computador = Computador;
-this.ExecutarPrograma = ExecutarPrograma;
-}
-
-public Computador getComputador(){
-    return this.Computador;
-}
-
-public void setComputador(Computador Computador){
-        this.Computador = Computador;
-}
-
-public Programa getExecutarPrograma(){
-    return this.ExecutarPrograma;
-}
-
-public void setExecutarPrograma(Programa ExecutarPrograma){
-        this.ExecutarPrograma = ExecutarPrograma;
+   private Computador computador;
+    
+    public SistemaOperacional(Computador computador) {
+        this.computador = computador;
     }
+
+public boolean executarPrograma(Programa p) {
+    // Verificação de SSD
+    if (p.getSSDocupado() > computador.getSSD()) {
+        System.out.println("Erro na instalação: SSD insuficiente!");
+        return false;
+    }
+
+    // Verificação de Memória RAM
+    if (p.getMemoriaRAMAlocada() > computador.getMemoriaRAM()) {
+        System.out.println("Erro na execução: Memória RAM insuficiente!");
+        return false;
+    }
+
+    // Execução com sucesso
+    Float tempo = p.getQuantidadeOperacoes() /
+            (computador.getOperacoesPorSegundo() * computador.getNucleos());
+
+    System.out.println("Programa executado com sucesso!");
+    
+    System.out.println("Tempo de execução: " + tempo + " segundos.");
+    return true;
 }
 
+    public Computador getComputador() {
+        return this.computador;
+    }
+
+    public void setComputador(Computador computador) {
+        this.computador = computador;
+    }
+
+}
