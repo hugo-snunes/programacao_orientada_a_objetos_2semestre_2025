@@ -11,6 +11,14 @@ public class Main {
         ArrayList<Material> materiais = new ArrayList<>();
         ArrayList<Emprestimo> emprestimos = new ArrayList<>();
 
+
+        // Exemplo Fixo
+        Instituicao UCB = new Instituicao("UCB", "123456", "Brasilia-DF");
+        Colecao c1 = new Colecao("Pedro", 10);
+        Emprestimo e1 = new Emprestimo(UCB, c1, "20/10/2025", "21/10/2025");
+        emprestimos.add(e1);
+
+
         int opcao;
 
         do {
@@ -78,9 +86,9 @@ public class Main {
                     System.out.print("Ano de publicação: ");
                     int anoR = sc.nextInt();
                     System.out.print("Edição: ");
-                    String edicaoR = sc.nextLine();
+                    int edicao = sc.nextInt();
                     sc.nextLine();
-                    materiais.add(new Revista(tituloR, anoR, edicaoR));
+                    materiais.add(new Revista(tituloR, anoR, edicao));
                     System.out.println("Revista cadastrada!\n");
                     break;
 

@@ -12,7 +12,6 @@ public class Municipio {
         this.precoM2 = precoM2;
     }
 
-
     public String getNome(){
         return this.nome;
     }
