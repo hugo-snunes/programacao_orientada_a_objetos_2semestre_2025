@@ -1,5 +1,4 @@
-package atividade2;
-public abstract class Material {
+public abstract class Material implements ItemEmprestavel{
     private String titulo;
     private Integer anoPublicacao;
 

@@ -1,4 +1,3 @@
-package atividade2;
 public class Colecao implements ItemEmprestavel{
     private String proprietario;
     private Integer qtItens;
@@ -29,4 +28,3 @@ public class Colecao implements ItemEmprestavel{
         System.out.println("Qt. Itens: " + this.qtItens);
     }
 }
-   

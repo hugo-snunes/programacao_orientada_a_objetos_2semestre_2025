@@ -1,5 +1,3 @@
-package atividade2;
-
 public class Livro extends Material{
     private String autor;
 

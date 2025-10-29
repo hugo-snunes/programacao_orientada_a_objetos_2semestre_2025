@@ -1,5 +1,3 @@
-package atividade2;
-
 public class Emprestimo {
     private TomadorEmprestimo tomadorEmprestimo;
     private ItemEmprestavel itemEmprestavel;

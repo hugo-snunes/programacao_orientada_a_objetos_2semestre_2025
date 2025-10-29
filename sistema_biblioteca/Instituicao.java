@@ -1,5 +1,3 @@
-package atividade2;
-
 public class Instituicao implements TomadorEmprestimo{
     private String nome;
     private String cnpj;

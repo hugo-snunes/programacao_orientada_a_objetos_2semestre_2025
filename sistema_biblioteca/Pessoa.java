@@ -1,5 +1,3 @@
-package atividade2;
-
 public abstract class Pessoa implements TomadorEmprestimo{
     private String nome;
     private String email;

@@ -1,10 +1,8 @@
-package atividade2;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Pessoa> pessoas = new ArrayList<>();
@@ -45,9 +43,17 @@ public class Main {
                     System.out.print("Matrícula: ");
                     int matricula = sc.nextInt();
                     sc.nextLine();
-                    pessoas.add(new Usuario(nomeU, emailU, matricula));
-                    System.out.println("Usuário cadastrado com sucesso!\n");
-                    break;
+                    try {
+                        pessoas.add(new Usuario(nomeU, emailU, matricula));
+                        System.out.println("Usuário cadastrado com sucesso!\n");
+                    } catch (NomeInvalidoException e){
+                        System.out.println("Nome Invalido");
+                    } catch (EmailInvalidoException e){
+                        System.out.println("Nome Invalido");
+                    } catch (Exception e) {
+                        System.out.println("Nome Invalido");
+                    }
+                   
 
                 case 2:
                     System.out.print("Nome: ");
@@ -123,10 +129,14 @@ public class Main {
                     String dataE = sc.nextLine();
                     System.out.print("Data de devolução: ");
                     String dataD = sc.nextLine();
-
-                    emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
+                    try {
+                        emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
                                                    materiais.get(idxMaterial),
                                                    dataE, dataD));
+                    } catch (Exception e) {
+                        System.out.println("Algo deu errado. Tente novamente.");
+                    }
+                    
                     System.out.println("Empréstimo cadastrado!\n");
                     break;
 
