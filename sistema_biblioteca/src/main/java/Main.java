@@ -1,11 +1,25 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import dao.PessoaDAO;
+import model.Colecao;
+import model.Emprestimo;
+import model.Funcionario;
+import model.Instituicao;
+import model.Livro;
+import model.Material;
+import model.Pessoa;
+import model.Revista;
+import model.Usuario;
+
+import exceptions.NomeInvalidoException;
+import exceptions.EmailInvalidoException;
+
 public class Main {
     public static void main(String[] args) throws Exception{
         Scanner sc = new Scanner(System.in);
-
-        ArrayList<Pessoa> pessoas = new ArrayList<>();
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        ArrayList<Pessoa> pessoas = pessoaDAO.getTodasPessoas();
         ArrayList<Material> materiais = new ArrayList<>();
         ArrayList<Emprestimo> emprestimos = new ArrayList<>();
 
@@ -43,6 +57,9 @@ public class Main {
                     System.out.print("Matrícula: ");
                     int matricula = sc.nextInt();
                     sc.nextLine();
+                    Usuario u1 = new Usuario(nomeU, emailU, matricula);
+                    pessoas.add(u1);
+                    pessoaDAO.salvarPessoa(u1);
                     try {
                         pessoas.add(new Usuario(nomeU, emailU, matricula));
                         System.out.println("Usuário cadastrado com sucesso!\n");
@@ -62,6 +79,9 @@ public class Main {
                     String emailF = sc.nextLine();
                     System.out.print("Cargo: ");
                     String cargo = sc.nextLine();
+                    Funcionario f1 = new Funcionario(nomeF, emailF, cargo);
+                    pessoas.add(f1);
+                    pessoaDAO.salvarPessoa(f1);
                     pessoas.add(new Funcionario(nomeF, emailF, cargo));
                     System.out.println("Funcionário cadastrado com sucesso!\n");
                     break;

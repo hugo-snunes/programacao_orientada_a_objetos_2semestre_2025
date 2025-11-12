@@ -18,7 +18,7 @@ public class ExemploArrayList {
             System.out.println(listaNomes.get(i));
         }
 
-        System.out.println(listaNomes.get(i));
+                System.out.println(listaNomes.get(i));
 
         if (listaNomes.contains("Bob")){
             System.out.println("Bob está na lista.");

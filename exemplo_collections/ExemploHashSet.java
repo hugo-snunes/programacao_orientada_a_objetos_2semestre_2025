@@ -7,8 +7,8 @@ public class ExemploHashSet {
     public static void main(String[] args) {
         HashSet<Integer> inteiros = new HashSet<>(); 
 
-        conjuntoNomes.add("Ana");
-        conjuntoNomes.add("Bruno");
+        listaNomes.add("Ana");
+        listaNomes.add("Bruno");
         inteiros.add(1);
         inteiros.add(2);
         inteiros.add(3);

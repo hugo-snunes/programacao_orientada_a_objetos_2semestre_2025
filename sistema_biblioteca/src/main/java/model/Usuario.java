@@ -1,5 +1,16 @@
+package model;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import exceptions.NomeInvalidoException;
+import exceptions.EmailInvalidoException;
+
+@Entity
+@DiscriminatorValue("usuario")
 public class Usuario extends Pessoa{
     private Integer matricula;
+
+    protected Usuario(){}
 
     public Usuario(String nome, String email, Integer matricula) throws Exception{
         super(nome, email);
